@@ -1,5 +1,7 @@
 from pytest_bdd import scenario, given, when, then
 
+count = 0
+
 @scenario('../features/sample.feature', 'Adding sample')
 def test_add():
     pass
@@ -10,10 +12,10 @@ def have_five():
 
 
 @when("You add 3")
-def add_three(have_five):
+def add_three():
     return have_five + 3
 
 
 @then("You have 8")
-def step_impl(add_three):
+def step_impl():
     assert add_three == 8
