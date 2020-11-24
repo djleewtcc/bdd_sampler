@@ -13,9 +13,9 @@ def have_five():
 
 @when("You add 3")
 def add_three():
-    return have_five + 3
+    return have_five() + 3
 
 
 @then("You have 8")
 def step_impl():
-    assert add_three == 8
+    assert add_three() == 8
